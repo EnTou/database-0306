@@ -3,7 +3,7 @@ select *
 from scott.emp
 where DEPTNO = 30;
 # 2. 找出从事 clerk 工作的员工的编号、姓名、部门号
-select *
+select EMPNO, ENAME, DEPTNO
 from scott.emp
 where JOB = 'CLERK';
 # 3. 检索出奖金多于基本工资的员工信息
@@ -57,7 +57,7 @@ where ENAME not rlike 'R';
 # 17. 返回员工的详细信息并按姓名排序
 select *
 from scott.emp
-order by ENAME;
+order by ENAME asc;
 # 18. 返回员工的信息并按员工的工作年限降序排列
 select *
 from scott.emp
