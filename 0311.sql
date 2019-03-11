@@ -95,3 +95,17 @@ create table scott.test
 set autocommit = 0; -- 不自动提交
 set autocommit = 1; -- 默认 自动提交
 
+select DEPTNO, avg(sal)
+# select sum(sal)
+# select min(sal), max(sal)
+# select count(*)
+# select min(ename), max(ename)
+# select sum(ename)
+from scott.emp
+group by DEPTNO;  -- 列值相同的分为一组
+
+select JOB, max(HIREDATE)
+from scott.emp
+group by JOB
+having JOB in ('clerk', 'manager'); -- 组检索 / where 行检索 / 投影 列检索
+
